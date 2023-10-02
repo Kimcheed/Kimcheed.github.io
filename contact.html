@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact us!</title> <!-- title of webpage -->
+</head>
+<body bgcolor="pink"> <!-- sets webpage to pink -->
+
+    <div align="center"> <!-- set to center for class -->
+        <h1 style="font-size: 100px;"><b>Contact us!</b></h1>
+
+        <fieldset>
+<legend>Concerns or Questions?</legend> <!--Text Input-->
+        <form action="mailto:koltendono@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Name:</label>
+      <input type="text" name="name" required="required"/>
+      <br /><br />
+ 
+      <label for="email">Email:</label>
+      <input type="text" name="email" required="required"/>
+      <br /><br />
+
+<legend>How do you feel about Peach?</legend> <!--Drowndown menu-->
+       <select name="options">
+      	<option value ="Happy" selected="selected">Happy</option>
+
+      	<option value ="Sad">Sad</option>
+
+      	<option value ="Angry">Angry</option>
+
+      </select> <br /><br />
+
+<legend>Would you visit this webpage again?</legend> <!--Radio Button-->
+      <br />
+
+      	 <input type="radio" name="choices" value="yes" checked="checked"/>Yes
+
+      	 <input type="radio" name="choices" value="No"/>No
+
+      	 <input type="radio" name="choices" value="Maybe">Maybe
+
+      	<br /><br />
+
+
+<legend>Any Comments?</legend>
+      	
+      	<textarea name="comments" cols="20" rows="4" Align="Center">Enter your comments...</textarea> <br /><br /> 
+      	<!--Text area-->
+
+      	<legend>Upload a picture of your dog! *Optional*</legend> <!--Upload Button-->
+      	<input type="file" name="user-image"> <br /><br /><br />
+      	
+
+      <input type="submit" value="Submit"/> <!--Submit Button-->
+  </form>
+</fieldset>
+<p><a href="index.html">Click Here To Return to Home Page!</a></p>
+    </div>
+</body>
+</html>
