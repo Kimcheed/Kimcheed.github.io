@@ -1,6 +1,9 @@
 body {
 	background-color: pink; /* Example bg name color for the whole page */
 	color: #333;
+	max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 h1 {
@@ -201,7 +204,13 @@ input[type="file"] {
   width: 100%;
 }
 
+.custom-background{
+	background-image: url('images/peach1.png');
+	background-size: cover;
+	background-attachment: fixed;
+}
 
-
-
+.float-left{
+	float: left;
+}
 
