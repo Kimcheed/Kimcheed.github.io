@@ -1,0 +1,38 @@
+body{
+	font-family: Arial, sans-serif;
+	background-color: pink; /*Example bg name color for whole page */
+	color: #333;
+}
+h1{
+	align-content: center;
+	font-size: 100px;
+	color: rgb(255, 87, 51); /* Example of using rgb color for text */
+
+}
+
+.black-line { /* class example */
+border: 10px solid black;
+}
+
+#top { /* Example of ID Selector*/
+	font-size: 100px;
+	color: #8A2BE2; /* Hex example */
+}
+
+p{
+	font-size: 40px; 
+	background-color: white; 
+	margin: 0;" 
+}
+
+ul{
+	font-size: 40px; background-color: white; margin: 0;
+}
+
+table{
+	width:900px;
+	cellpadding: 50px;
+	cellspacing: 50px;
+	border: 10px solid black;
+	background-color: white;
+}
