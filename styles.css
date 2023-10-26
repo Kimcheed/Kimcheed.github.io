@@ -1,54 +1,207 @@
-body{
-	
-	background-color: pink; /*Example bg name color for whole page */
+body {
+	background-color: pink; /* Example bg name color for the whole page */
 	color: #333;
 }
-h1{
+
+h1 {
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	letter-spacing: 4px;
+	word-spacing: 8px;
 	font-family: Arial, sans-serif;
-	align-content: center;
+	text-align: center; /* Center align the text */
 	font-size: 100px;
 	color: rgb(255, 87, 51); /* Example of using rgb color for text */
-
 }
 
 .black-line { /* class example */
-border: 10px solid black;
+	border: 10px solid black;
 }
 
-#top { /* Example of ID Selector*/
-	font-size: 625%; /* font size example*/
+#top { /* Example of ID Selector */
+	font-size: 625%; /* font size example */
 	font-family: 'Open Sans', sans-serif;
 	color: #8A2BE2; /* Hex example */
 }
 
-p{
+p {
+	text-indent: 20px;
+	line-height: 1.5; 
 	font-family: Times New Roman, serif;
-	font-size: 2.5em; 
-	background-color: white; 
-	margin: 0;" 
-}
-
-ul{
-	font-size: 40px; background-color: white; margin: 0;
-	font-family: 'Courier New', monospace;
-	font-style: oblique 20deg; /*oblique*/
-	text-transform: lowercase; /*lowercase*/
-	text-transform: capitalize;/*capitalize*/
-}
-
-table{
-	width:900px;
-	cellpadding: 50px;
-	cellspacing: 50px;
-	border: 10px solid black;
+	font-size: 2.5em;
 	background-color: white;
-	font-weight: bold; /*bold*/
-	text-transform: uppercase; /* uppercase */
+	margin: 0;
 }
-.strike-through {
-  font-family: Times New Roman, serif;
-  font-size: 2.5em;
+
+ul {
+	list-style-type: disc;
+	font-size: 40px;
+	background-color: white;
+	margin: 0;
+	font-family: 'Courier New', monospace;
+	font-style: oblique 20deg; /* oblique */
+	text-transform: lowercase; /* lowercase */
+	text-transform: capitalize; /* capitalize */
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* Using an image as a custom bullet point */
+ul.custom-bullet {
+  list-style-image: url('images/bullet.png'); 
+  width: 1000px;
+  height: 500px;
+margin-top: 0;
+margin-bottom: 0;
+}
+
+
+table {
+  width: 100%; 
+  margin: 0 auto; 
+  border: 10px solid black; /* Add a border around the table */
   background-color: white;
-  margin: 0; /* Remove the extra double quote here */
-  text-decoration: line-through;
+  font-weight: bold; /* Make the text in the table cells bold */
+  text-transform: uppercase; /* Transform text to uppercase */
+  border-collapse: collapse;
 }
+table td,
+table th {
+  text-align: left;
+  padding: 10px;
+}
+table th{
+	text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2; 
+}
+
+table tr:hover {
+  background-color: #ffcccb;
+}
+
+
+
+.strike-and-underline {
+	font-family: Times New Roman, serif;
+	font-size: 2.5em;
+	background-color: white;
+	margin: 0;
+	text-decoration: line-through underline; /* line through & underline */
+}
+
+.right-aligned {
+	text-align: right;
+}
+
+.first-letter-style::first-letter {
+  font-size: 50px; /* Increase the font size of the first letter */
+  color: black;
+  font-weight: bold; /* Make the first letter bold */
+  text-transform: uppercase;
+}
+
+a:visited {
+  color: purple; /* Change the color of visited links to purple */
+  text-decoration: underline; /* Underline visited links */
+}
+
+.custom-div {
+      width: 100%;
+      height: 100%;
+      min-width: 150px;
+      min-height: 50px;
+      max-width: 3000px;
+      max-height: 2000px;
+      overflow: scroll;
+      border-radius: 10px;
+      background-color: lightblue;
+    } 
+.bordered-paragraph {
+      border: 5px dashed blue; /* Set width, style, and color of the border */
+      padding: 10px; /* Add some padding to make the border more visible */
+    }
+
+.box {
+  margin: 10px 20px 30px 40px; /* Margin values for top, right, bottom, and left sides */
+  padding: 5px 15px 10px 20px; /* Padding values for top, right, bottom, and left sides */
+  margin: 0 auto; /* Center the content horizontally within the box */
+}
+
+.hide {
+  display: none;
+}
+
+ /* ALL CONTACT INFORMATION INPUT FORMATTING */
+fieldset {
+  text-align: center;
+  border: 2px solid #008CBA;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+
+legend {
+  font-weight: bold;
+  color: #008CBA;
+}
+
+
+label {
+  display: block; 
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f7f7f7;
+}
+
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f7f7f7;
+}
+
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+input[type="file"] {
+  width: 100%;
+}
+
+
+
+
+
