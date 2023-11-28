@@ -52,7 +52,7 @@ function changeTextOnHover(elementId, newText) {
 
 
 
-function updateNestedListContents() {
+function updateNestedListContents() { //updates nested list
     // reference
     const nestedList = document.getElementById('nestedListId'); 
     const nestedListItems = nestedList.getElementsByTagName('li');
@@ -74,7 +74,7 @@ function updateNestedListContents() {
     }
 
     // add number
-    const introSentence = document.getElementById('introNestedSentence'); // Replace 'introNestedSentence' with the actual ID
+    const introSentence = document.getElementById('introNestedSentence');
     introSentence.innerText += ` (${nestedListItems.length} items)`;
 }
 
