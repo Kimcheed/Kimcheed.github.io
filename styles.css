@@ -214,3 +214,7 @@ input[type="file"] {
 	float: left;
 }
 
+body.dark-mode {
+    background-color: #333; /* Dark background color */
+}
+
