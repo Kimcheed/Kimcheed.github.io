@@ -1,98 +1,69 @@
-// displays current time & date
+// displays current time & date using jQuery
 function displayCurrentDateTime() {
-    
     const currentDate = new Date();
+    const formattedDateTime = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()} ${currentDate.getHours() >= 12 ? 'PM' : 'AM'}`;
 
-    // date and time
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth() + 1; //add one since months start at 0
-    const day = currentDate.getDate();
-    let hours = currentDate.getHours();
-    const minutes = currentDate.getMinutes();
-    const seconds = currentDate.getSeconds();
-
-    // convert to 12 hour format
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12 || 12; // If hours is 0, set it to 12
-
-    // format date & time
-    const formattedDateTime = `${month}/${day}/${year} ${hours}:${minutes}:${seconds} ${ampm}`;
-
-    
-    document.getElementById('currentDateTime').innerText = formattedDateTime;
+    $('#currentDateTime').text(formattedDateTime);
 }
 
-// light dark mode toggle
+// light dark mode toggle using jQuery
 function toggleDarkMode() {
-    const body = document.body;
-    const isDarkMode = body.classList.contains('dark-mode');
-
-    // dark mode
-    body.classList.toggle('dark-mode', !isDarkMode);
+    $('body').toggleClass('dark-mode');
 }
 
-//change text on hover
+// change text on hover using jQuery
 function changeTextOnHover(elementId, newText) {
-    const element = document.getElementById(elementId);
+    const element = $('#' + elementId);
 
     if (element) {
-        // save original text
-        const originalText = element.innerText;
+        const originalText = element.text();
 
-        //events for hover
-        element.addEventListener('mouseover', function () {
-            element.innerText = newText;
-        });
-
-        element.addEventListener('mouseout', function () {
-            element.innerText = originalText;
-        });
+        element.hover(
+            function () {
+                element.text(newText);
+            },
+            function () {
+                element.text(originalText);
+            }
+        );
     }
 }
 
-
-
-function updateNestedListContents() { //updates nested list
-    // reference
-    const nestedList = document.getElementById('nestedListId'); 
-    const nestedListItems = nestedList.getElementsByTagName('li');
+// update nested list contents using jQuery
+function updateNestedListContents() {
+    const nestedList = $('#nestedListId');
+    const nestedListItems = nestedList.find('li');
 
     // add new item at beginning
-    const newNestedItem = document.createElement('li');
-    newNestedItem.innerText = 'Tennis Ball';
-    nestedList.insertBefore(newNestedItem, nestedList.firstChild);
+    nestedList.prepend('<li>Tennis Ball</li>');
 
     // remove last item
-    nestedList.removeChild(nestedList.lastChild);
+    nestedList.children(':last').remove();
 
-    // example of innerHTML
-    nestedListItems[1].innerHTML = 'Happy <strong>Toy!</strong>';
+    // example of html()
+    nestedListItems.eq(1).html('Happy <strong>Toy!</strong>');
 
     // set new class
-    for (let i = 0; i < nestedListItems.length; i++) {
-        nestedListItems[i].classList.add('new-class'); 
-    }
+    nestedListItems.addClass('new-class');
 
     // add number
-    const introSentence = document.getElementById('introNestedSentence');
-    introSentence.innerText += ` (${nestedListItems.length} items)`;
+    const introSentence = $('#introNestedSentence');
+    introSentence.text(`${introSentence.text()} (${nestedListItems.length} items)`);
 }
 
-// call functions when page loads
-window.onload = function () {
+// call functions when page loads using jQuery
+$(document).ready(function () {
     displayCurrentDateTime();
 
     // refresh for time
     setInterval(displayCurrentDateTime, 1000);
 
     // dark mode button
-    const toggleButton = document.getElementById('toggleDarkModeButton');
-    toggleButton.addEventListener('click', toggleDarkMode);
+    $('#toggleDarkModeButton').click(toggleDarkMode);
 
     // interactive text
     changeTextOnHover('top', 'Hovering over the title!');
     changeTextOnHover('currentDateTime', 'Hovering over the current date and time!');
 
-    const updateNestedListButton = document.getElementById('updateNestedListButton');
-    updateNestedListButton.addEventListener('click', updateNestedListContents);
-};
+    $('#updateNestedListButton').click(updateNestedListContents);
+});
